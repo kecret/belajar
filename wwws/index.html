@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Device Ready Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+        $('#badan').load('http://kubuatweb.byethost7.com');   
+
+    }
+    document.addEventListener("backbutton", onBackKeyDown, false);  
+    function onBackKeyDown(e) { 
+       e.preventDefault(); 
+       alert('Back Button is Pressed!'); 
+    }
+ 
+    </script>
+  </head>
+  <body onload="onLoad()">
+    <h1>Hallo World</h1>
+    <button id="a">Button</button>
+    <div id="badan"></div>
+  </body>
+</html>
+
